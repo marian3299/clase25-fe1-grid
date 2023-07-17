@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+header {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 13px 10px;
+    border-bottom: 1px solid rgba(34, 34, 34, 0.30);
+
+    h2 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 25px;
+    }
+
+    input {
+        display: none;
+        border-radius: 5px;
+        border: 0.3px solid #222;
+        background: #FAFAFA;
+        width: 400px;
+        padding: 12px;
+    }
+
+
+    img {
+        justify-self: end;
+
+        
+    }
+}
+
+img.desktop {
+    display: none;
+}
+
+.foto-perfil {
+    border-radius: 100%;
+}
+
+.grid-1 {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: 1fr;
+    margin: 25px;
+    justify-content: center;
+    column-gap: 20px;
+    padding: 20px 30px;
+    border-radius: 5px;
+    border: 0.4px solid rgba(34, 34, 34, 0.30);
+    
+}
+
+
+.container {
+    margin: 0 27px;
+    border-radius: 5px;
+    border: 0.4px solid rgba(34, 34, 34, 0.30);
+    margin-bottom: 95px;
+
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 50px 50% 1fr;
+        grid-template-rows: 1fr;
+        column-gap: 25px;
+        align-items: center;
+        padding: 9px;
+        border-radius: 5px 5px 0px 0px;
+        border-bottom: 0.4px solid rgba(34, 34, 34, 0.30);
+
+        h3 {
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        p {
+            justify-self: end;
+            font-size: 32px;
+            align-self: self-start;
+        }
+    }
+
+    .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        row-gap: 10px;
+        margin: 20px;
+
+        img {
+            justify-self: center;
+        }
+
+        div {
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            grid-auto-flow: column;
+            width: fit-content;
+            column-gap: 18px;
+
+            i {
+                font-size: 24px;
+            }
+        }
+
+        p {
+            font-size: 10px;
+            font-weight: 400;
+
+            &:nth-child(4) {
+                color: #A49B9B;
+            }
+
+            span {
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.aside {
+    display: none;
+}
+
+footer {
+    background-color: #222;
+
+    p {
+        font-size: 10px;
+        font-weight: 400;
+        color: #FFF;
+        text-align: center;
+        padding: 8px 0;
+    }
+}
+
+@media screen and (min-width:768px) {
+
+    header {
+        grid-template-columns: repeat(3, 1fr);
+        background: #FFF;
+        box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+
+        input {
+            display: block;
+            justify-self: center;
+        }
+
+        h2 {
+            padding-left: 105px;
+        }
+    }
+
+    main {
+        display: grid;
+        grid-template-areas: "contenedor aside"
+                            "publicacion aside";
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
+        padding-left: 109px;
+        background-color: #FAFAFA;
+    }
+
+    .grid-1{
+        grid-area: contenedor;
+        margin: 40px 0;
+        grid-template-columns: repeat(7, 60px);
+        width: fit-content;
+        background-color: #FFF;
+
+    }
+
+    img.desktop {
+        display: block;
+    }
+
+    .container {
+        grid-area: publicacion;
+        margin: 0;
+        width: 600px;
+        background-color: #FFF;
+        margin-bottom: 110px;
+
+        .grid-3 {
+            img {
+                width: 488px;
+            }
+
+            div, p {
+                margin-left: 36px;
+            }
+        }
+    }
+
+    .aside {
+        display: grid;
+        grid-area: aside;
+        height: fit-content;
+        row-gap: 34px;
+        margin-top: 60px;
+
+        .perfil {
+            display: grid;
+            grid-template-areas: "foto div boton"
+                                "foto div boton";
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            width: min-content;
+
+            img {
+                grid-area: foto;
+                margin-right: 13px;
+                width: 50px;
+               
+            }
+
+            div{
+                grid-area: div;
+                align-self: self-end;
+                h5{
+                    font-size: 10px;
+                    margin-right: 85px;
+                    align-self: end;
+                }
+    
+                p{
+                    padding: 4px 0 0;
+                    font-size: 10px;
+                    color: #808080;
+                }
+            }
+
+            button {
+                grid-area: boton;
+            }
+
+            
+        }
+
+        button{
+            border: none;
+            background-color: transparent;
+            color: #1CA0F6;
+            font-weight: 500;
+        }
+
+        .sugerencias {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: repeat(3, max-content);
+            row-gap: 10px;
+
+            h5 {
+                font-size: 10px;
+
+                &:first-child{
+                    color: #808080;
+                    margin: 0;
+                }
+                
+            }
+
+            div {
+                display: grid;
+                grid-template-columns: 35px 43% auto;
+                align-items: center;
+
+                img {
+                    width: 30px;
+                }
+
+                button {
+                    justify-self: self-start;
+                }
+            }
+        }
+    }
+
+}

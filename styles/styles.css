@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+header {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 13px 10px;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.3);
+}
+header h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+}
+header input {
+  display: none;
+  border-radius: 5px;
+  border: 0.3px solid #222;
+  background: #FAFAFA;
+  width: 400px;
+  padding: 12px;
+}
+header img {
+  justify-self: end;
+}
+
+img.desktop {
+  display: none;
+}
+
+.foto-perfil {
+  border-radius: 100%;
+}
+
+.grid-1 {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  grid-template-rows: 1fr;
+  margin: 25px;
+  justify-content: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  padding: 20px 30px;
+  border-radius: 5px;
+  border: 0.4px solid rgba(34, 34, 34, 0.3);
+}
+
+.container {
+  margin: 0 27px;
+  border-radius: 5px;
+  border: 0.4px solid rgba(34, 34, 34, 0.3);
+  margin-bottom: 95px;
+}
+.container .grid-2 {
+  display: grid;
+  grid-template-columns: 50px 50% 1fr;
+  grid-template-rows: 1fr;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+  align-items: center;
+  padding: 9px;
+  border-radius: 5px 5px 0px 0px;
+  border-bottom: 0.4px solid rgba(34, 34, 34, 0.3);
+}
+.container .grid-2 h3 {
+  font-weight: 500;
+  font-size: 15px;
+}
+.container .grid-2 p {
+  justify-self: end;
+  font-size: 32px;
+  align-self: self-start;
+}
+.container .grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  row-gap: 10px;
+  margin: 20px;
+}
+.container .grid-3 img {
+  justify-self: center;
+}
+.container .grid-3 div {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-auto-flow: column;
+  width: -moz-fit-content;
+  width: fit-content;
+  -moz-column-gap: 18px;
+       column-gap: 18px;
+}
+.container .grid-3 div i {
+  font-size: 24px;
+}
+.container .grid-3 p {
+  font-size: 10px;
+  font-weight: 400;
+}
+.container .grid-3 p:nth-child(4) {
+  color: #A49B9B;
+}
+.container .grid-3 p span {
+  font-weight: 500;
+}
+
+.aside {
+  display: none;
+}
+
+footer {
+  background-color: #222;
+}
+footer p {
+  font-size: 10px;
+  font-weight: 400;
+  color: #FFF;
+  text-align: center;
+  padding: 8px 0;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    grid-template-columns: repeat(3, 1fr);
+    background: #FFF;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+  }
+  header input {
+    display: block;
+    justify-self: center;
+  }
+  header h2 {
+    padding-left: 105px;
+  }
+  main {
+    display: grid;
+    grid-template-areas: "contenedor aside" "publicacion aside";
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    padding-left: 109px;
+    background-color: #FAFAFA;
+  }
+  .grid-1 {
+    grid-area: contenedor;
+    margin: 40px 0;
+    grid-template-columns: repeat(7, 60px);
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: #FFF;
+  }
+  img.desktop {
+    display: block;
+  }
+  .container {
+    grid-area: publicacion;
+    margin: 0;
+    width: 600px;
+    background-color: #FFF;
+    margin-bottom: 110px;
+  }
+  .container .grid-3 img {
+    width: 488px;
+  }
+  .container .grid-3 div, .container .grid-3 p {
+    margin-left: 36px;
+  }
+  .aside {
+    display: grid;
+    grid-area: aside;
+    height: -moz-fit-content;
+    height: fit-content;
+    row-gap: 34px;
+    margin-top: 60px;
+  }
+  .aside .perfil {
+    display: grid;
+    grid-template-areas: "foto div boton" "foto div boton";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: -moz-min-content;
+    width: min-content;
+  }
+  .aside .perfil img {
+    grid-area: foto;
+    margin-right: 13px;
+    width: 50px;
+  }
+  .aside .perfil div {
+    grid-area: div;
+    align-self: self-end;
+  }
+  .aside .perfil div h5 {
+    font-size: 10px;
+    margin-right: 85px;
+    align-self: end;
+  }
+  .aside .perfil div p {
+    padding: 4px 0 0;
+    font-size: 10px;
+    color: #808080;
+  }
+  .aside .perfil button {
+    grid-area: boton;
+  }
+  .aside button {
+    border: none;
+    background-color: transparent;
+    color: #1CA0F6;
+    font-weight: 500;
+  }
+  .aside .sugerencias {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, max-content);
+    row-gap: 10px;
+  }
+  .aside .sugerencias h5 {
+    font-size: 10px;
+  }
+  .aside .sugerencias h5:first-child {
+    color: #808080;
+    margin: 0;
+  }
+  .aside .sugerencias div {
+    display: grid;
+    grid-template-columns: 35px 43% auto;
+    align-items: center;
+  }
+  .aside .sugerencias div img {
+    width: 30px;
+  }
+  .aside .sugerencias div button {
+    justify-self: self-start;
+  }
+}/*# sourceMappingURL=styles.css.map */
